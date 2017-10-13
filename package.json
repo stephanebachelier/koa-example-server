@@ -1,0 +1,44 @@
+{
+  "name": "koa-example-server",
+  "version": "0.0.0",
+  "description": "Koa example server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "DEBUG=koa* node index.js",
+    "lint": "standard",
+    "start": "node index.js",
+    "watch": "nodemon --watch index.js -w ./api -w ./schema -w ./test --exec yarn run dev",
+    "precommit": "yarn run lint",
+    "prepush": "yarn test",
+    "test": "ava test/*.test.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "boom": "^5.1.0",
+    "debug": "^2.6.8",
+    "dotenv": "^4.0.0",
+    "dotenv-safe": "^4.0.4",
+    "ip": "^1.1.5",
+    "kcors": "^2.2.1",
+    "koa": "^2.3.0",
+    "koa-better-body": "^3.0.4",
+    "koa-helmet": "^3.2.0",
+    "koa-router": "^7.2.1",
+    "mongoose": "^4.11.13"
+  },
+  "devDependencies": {
+    "ava": "^0.21.0",
+    "babel-eslint": "^8.0.0",
+    "got": "^7.1.0",
+    "husky": "^0.14.3",
+    "nodemon": "^1.12.1",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "**/node_modules/**"
+    ]
+  }
+}
